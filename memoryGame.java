@@ -17,10 +17,10 @@ public class memoryGame {
 
     public void play() {
         int current = 1;
-        int ind = (Math.random() * (words.length)); 
+        int ind = (int) (Math.random() * (words.length)); 
         for (int i = 0; i < usedIndices.size(); i++) {
-            if (ind = usedIndices.get(i))
-                ind = (Math.random() * (words.length));
+            if (ind == usedIndices.get(i))
+                ind = (int)(Math.random() * (words.length));
         }
         while (current <= duration) {
             usedIndices.add(ind);    

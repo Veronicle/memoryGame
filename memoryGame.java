@@ -26,30 +26,35 @@ public class memoryGame {
 
     public void play() {
 
+        // Introduction
         System.out.println("Welcome to the game of memory! The objective of this game is to maximize your score by guessing the right words based on the hints that I provide to you. Let's begin :)");
 
+        // Null instantiation of guess
         String guess = "";
+
+        // Null instantiation of score
         int score = 0;
 
+        // Iterates through all the words
         for (int i = 0; i < items.size(); i++) {
-            System.out.println("Word " + (i + 1) + ":");
-            System.out.println("Hint 1: " + items.get(i).getHint1());
-            System.out.println("Do you want another hint? Your score will go down if so. Enter yes or no: ");
-            String ans = araash.nextLine();
+            System.out.println("-------------->\nWord " + (i + 1) + ":"); // Word 1
+            System.out.println("Hint 1: " + items.get(i).getHint1()); // Hint 1
+            System.out.println("Do you want another hint? Your score will go down if so. Enter yes or no: "); // Prompts for Hint 2
+            String ans = araash.nextLine(); // yes/no for Hint 2
             if (ans.equalsIgnoreCase("yes")) {
                 System.out.println("Hint 2: " + items.get(i).getHint2());
-                score--;
+                score--; // shows hint 2 if "yes" but score decrements
             }
-            while (!(guess.equalsIgnoreCase(items.get(i).getObject()))) {
+            while (!(guess.equalsIgnoreCase(items.get(i).getObject()))) { // while the word is not guessed, will re-prompt
                 System.out.println("Enter your guess: ");
                 guess = araash.nextLine();    
             }      
-            score++;
+            score++; // score increments once guess is correct 
             }
 
-            araash.close();
+            araash.close(); // close scanner at end - common practice
 
-            System.out.println("Thank you for playing. Your final score was " + score + " points.");
+            System.out.println("Thank you for playing. Your final score was " + score + " points."); // shows final score
 
         }
 

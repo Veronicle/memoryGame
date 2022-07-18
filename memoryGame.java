@@ -14,14 +14,24 @@ public class memoryGame {
         memoryObject o5 = new memoryObject("India", "This is the country you are from", "");
         memoryObject o6 = new memoryObject("dictionary", "A book with every word in a language", "The word rhymes with pictionary");
         memoryObject o7 = new memoryObject("laptop", "A mobile computer", "This device folds");
+        // More objects updated as of 7/18/22
+        memoryObject o8 = new memoryObject("book", "Something that authors write", "A physical object for reading");
+        memoryObject o9 = new memoryObject("cup", "Something that holds liquids", "It is cyldrincal in shape");
+        memoryObject o10 = new memoryObject("television", "you watch shows and movies on this", "");
+        memoryObject o11 = new memoryObject("golf", "A sport with clubs, a ball, and tees", "Many peopls in the family play it");
+        memoryObject o12 = new memoryObject("music", "Something that lots of people, including you, like listening to", "");
+        memoryObject o13 = new memoryObject("shoes", "A pair of these are worn on feet", "I - Araash - sell these");
+        memoryObject o14 = new memoryObject("trophy", "Given to people who win something", "They often are gold or silver in color");
         // Adding all the words-to-be-guessed to an array list
-        items.add(o1);
-        items.add(o2);
-        items.add(o3);
-        items.add(o4);
-        items.add(o5);
-        items.add(o6);
-        items.add(o7);
+        memoryObject[] array = {o1, o2, o3, o4, o5, o6, o7, o8, o9, o10, o11, o12, o13, o14}; 
+        addObjects(array);
+        
+    }
+
+    public void addObjects(memoryObject[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            items.add(arr[i]);
+        }
     }
 
     public void play() {
@@ -57,6 +67,13 @@ public class memoryGame {
             System.out.println("Thank you for playing. Your final score was " + score + " points."); // shows final score
 
         }
+
+    public static void main(String[] args) {
+        
+        memoryGame trial = new memoryGame();
+        trial.play();
+    
+    }
 
         /* Old, flawed method => completely changed it
         int current = 1;
